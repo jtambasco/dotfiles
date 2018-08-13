@@ -38,6 +38,7 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'tpope/vim-obsession'
 Plug 'mhinz/vim-startify'
+Plug 'reedes/vim-lexical'
 
 call plug#end()
 
@@ -144,3 +145,13 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 let g:neosnippet#enable_completed_snippet = 1
+
+" Vim-Lexical
+let g:lexical#spell_key = '<leader>z'
+set nocompatible
+augroup lexical
+  autocmd!
+  autocmd FileType latex,tex,markdown,mkd call lexical#init()
+  autocmd FileType textile call lexical#init()
+  autocmd FileType text call lexical#init({ 'spell': 0 })
+augroup END
