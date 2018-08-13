@@ -65,11 +65,21 @@ eval "$(fasd --init posix-alias zsh-hook)"
 alias vim=nvim
 
 # exa
+PATH="$PATH:$HOME/.cargo/bin"
 alias ls='exa -h'
 
 # term
 export TERM=xterm-256color
 
+# Lumerical
+alias lumerical-fdtd='/opt/lumerical/fdtd/bin/fdtd-solutions'
+alias lumerical-mode='/opt/lumerical/mode/bin/mode-solutions'
+alias lumerical-interconnect='/opt/lumerical/interconnect/bin/interconnect'
+alias lumerical-device='/opt/lumerical/device/bin/device'
+
 # FZF
 alias fvim='nvim $(fzf)'
 alias fcd='cd "$(dirname "$(fzf)")"'
+
+# Qt5
+alias qt5-designer='/usr/lib/x86_64-linux-gnu/qt5/bin/designer'
