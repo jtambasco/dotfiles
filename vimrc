@@ -39,6 +39,10 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'tpope/vim-obsession'
 Plug 'mhinz/vim-startify'
 Plug 'reedes/vim-lexical'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/mathjax-support-for-mkdp'
+Plug 'iamcco/markdown-preview.vim'
 
 call plug#end()
 
@@ -156,3 +160,14 @@ augroup lexical
   autocmd FileType textile call lexical#init()
   autocmd FileType text call lexical#init({ 'spell': 0 })
 augroup END
+
+" Markdown-preview
+let g:mkdp_path_to_chrome = "chromium"
+let g:mkdp_auto_start = 0
+nmap <silent> <F9> <Plug>MarkdownPreview
+imap <silent> <F9> <Plug>MarkdownPreview
+nmap <silent> <F10> <Plug>StopMarkdownPreview
+imap <silent> <F10> <Plug>StopMarkdownPreview
+
+" Markdown-Vim
+let g:vim_markdown_folding_disabled = 1
