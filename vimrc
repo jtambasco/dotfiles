@@ -136,6 +136,7 @@ let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_quickfix_mode = 2
 let g:vimtex_quickfix_open_on_warning = 0
 map <Leader>ls <Plug>(vimtex-compile-ss)
+"set conceallevel=2
 
 " Gtfo
 let g:gtfo#terminals = { 'unix': 'termite -d' }
