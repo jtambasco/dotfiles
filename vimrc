@@ -105,6 +105,13 @@ map <C-n> :NERDTreeToggle<CR>
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 
+" ctrl-p
+" ignore these files when completing names
+set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pdf,*.bak,*.beam,*.fd,*.bst,*.aux,*.bbl,*.blg,*.brf,*.cls,*.dtx,*.toc,*.lof,*.lot,*.cbx,*.run.xml,*.blx.bib,*.nav,*.vrb,*.snm,*.out,*.nlo,*.fls,*.bcf,*.ilg,*.ind,*.idc,*.synctex.gz,*-blx.bib,*.doc,*.idx,*.fdb_latexmk,*.dvi,*.docx,*.pyc,*.zip,*.tar*,*.7z,__pycache__
+
+" Nerdtree config for wildignore
+let NERDTreeRespectWildIgnore=1
+
 " Deoplete and Deoplete-Jedi
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#jedi#show_docstring = 1
