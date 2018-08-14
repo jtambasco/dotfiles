@@ -44,21 +44,14 @@ export BETTER_EXCEPTIONS=1
 # installed programs
 alias trizenClean='trizen -R $(trizen -Qdtq)'
 alias papercut='~/.papercut/pc-client-linux.sh'
-alias coral='/usr/local/coral-remote/coral-remote-mtl'
-alias css='wine /home/jl/.wine/drive_c/Program\ Files\ \(x86\)/Setti/Counter-Strike\ Source/hl2.exe -game cstrike -console -novid'
 alias aomx='wine "/home/jl/.wine/drive_c/Program Files (x86)/Microsoft Games/Age of Mythology/aomx"'
-alias coh='cd "/home/jl/.wine/drive_c/Program Files (x86)/THQ/Company of Heroes/" && wine "/home/jl/.wine/drive_c/Program Files (x86)/THQ/Company of Heroes/RelicCOH.exe" && cd -'
-alias supcom='wine "/home/jl/.wine/drive_c/Program Files (x86)/THQ/Gas Powered Games/Supreme Commander - Forged Alliance/bin/ForgedAlliance.exe"'
-alias voobly='export STAGING_WRITECOPY=1 && wine "/home/jl/.wine/drive_c/Program Files (x86)/Voobly/voobly.exe"'
 
 # thefuck
 eval $(thefuck --alias fu)
 
 # fasd
-alias m='f -e mplayer' # quick opening files with mplayer
-alias o='a -e xdg-open' # quick opening files with xdg-open
+alias o='f -e xdg-open' # quick opening files with xdg-open
 alias v='f -e vim' # quick opening files with vim
-alias sv='vim `sf`'
 eval "$(fasd --init posix-alias zsh-hook)"
 
 # neovim
