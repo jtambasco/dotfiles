@@ -43,6 +43,7 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.vim'
+Plug 'tpope/vim-dispatch'
 
 call plug#end()
 
@@ -54,6 +55,11 @@ set mouse=a
 
 " Map SPACE to remove search highlighting
 nmap <SPACE> <SPACE>:noh<CR>
+
+" Map ctrl-k to align to column paragraphs in vim and markdown.
+set textwidth=80
+autocmd FileType latex,tex,markdown,md nmap <c-k> vipgq
+autocmd FileType latex,tex,markdown,md vmap <c-k> gq
 
 " Setup tabs
 filetype plugin indent on
@@ -140,7 +146,7 @@ let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_quickfix_mode = 2
 let g:vimtex_quickfix_open_on_warning = 0
 map <Leader>ls <Plug>(vimtex-compile-ss)
-"set conceallevel=2
+set conceallevel=2
 
 " Gtfo
 let g:gtfo#terminals = { 'unix': 'termite -d' }
