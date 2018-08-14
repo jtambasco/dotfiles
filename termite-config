@@ -8,9 +8,6 @@ foreground_dim = #888888
 background = #002b36
 cursor = #93a1a1
 
-# if unset, will reverse foreground and background
-#highlight = #839496
-
 # colors from color0 to color254 can be set
 color0 = #073642
 color1 = #dc322f
@@ -30,4 +27,4 @@ color14 = #93a1a1
 color15 = #fdf6e3
 
 [options]
-font = InconsolataLGC Nerd Font Mono 11
+font = SauceCodePro Nerd Font 11
