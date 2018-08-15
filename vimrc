@@ -52,6 +52,9 @@ set mouse=a
 :filetype plugin on
 :nnoremap <Tab> :bnext<CR>
 :nnoremap <S-Tab> :bprevious<CR>
+set hidden
+set encoding=utf-8
+set fileencoding=utf-8
 
 " Map SPACE to remove search highlighting
 nmap <SPACE> <SPACE>:noh<CR>
