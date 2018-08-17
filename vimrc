@@ -44,6 +44,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'tpope/vim-dispatch'
+Plug 'tomtom/tcomment_vim'
 
 call plug#end()
 
