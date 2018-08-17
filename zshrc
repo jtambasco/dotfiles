@@ -44,7 +44,7 @@ export BETTER_EXCEPTIONS=1
 # installed programs
 alias trizenClean='trizen -R $(trizen -Qdtq)'
 alias papercut='~/.papercut/pc-client-linux.sh'
-alias aomx='wine "/home/jl/.wine/drive_c/Program Files (x86)/Microsoft Games/Age of Mythology/aomx"'
+alias aomx='wine "/home/jl/.wine/drive_c/Program Files (x86)/Microsoft Games/Age of Mythology/aomx" xres=1920 yres=1080 +noIntroCinematics'
 
 # thefuck
 eval $(thefuck --alias fu)
