@@ -1,41 +1,53 @@
 # ~/.zshrc
-#
+
 # Install:
-# Trizen: oh-my-zsh-git thefuck exa fasd nerd-fonts-complete fzf yapf
-# oh-my-zsh: Powerlevel9k zsh-dircolors-solarized zsh-syntax-highlighting
+# Trizen: antigen thefuck exa fasd nerd-fonts-complete fzf yapf
 # better_exceptions
 
-# oh-my-zsh config
+source /usr/share/zsh/share/antigen.zsh
+
+# Powerlevel9k theme settings
 DEFAULT_USER='jl'
+POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
 POWERLEVEL9K_MODE='nerdfont-complete'
-ZSH_THEME='powerlevel9k/powerlevel9k'
-
-plugins=(
-  zsh-dircolors-solarized
-  zsh-syntax-highlighting
-  git
-  bundler
-  dotenv
-)
-
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir root_indicator vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator ssh)
-
 POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-aheadbehind git-stash git-remotebranch git-tagname)
 
-export ZSH=/usr/share/oh-my-zsh
-source $ZSH/oh-my-zsh.sh
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle pip
+antigen bundle command-not-found
+antigen bundle zsh-dircolors-solarized
+antigen bundle zsh-syntax-highlighting
+antigen bundle git
+antigen bundle bundler
+antigen bundle dotenv
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle chrissicool/zsh-256color
+antigen bundle supercrabtree/k
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+
+# Load the theme.
+antigen theme bhilburn/powerlevel9k powerlevel9k
+
+# Tell Antigen that you're done.
+antigen apply
 
 # zsh auto config
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 bindkey -v
-zstyle :compinstall filename '$HOME/.zshrc'
-autoload -Uz compinit
-compinit
+
+# zsh-autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=243'
+bindkey '^ ' autosuggest-accept
 
 # Default Python settings
 export PYTHONSTARTUP=$HOME/.pythonstartup.py
@@ -44,7 +56,7 @@ export BETTER_EXCEPTIONS=1
 # installed programs
 alias trizenClean='trizen -R $(trizen -Qdtq)'
 alias papercut='~/.papercut/pc-client-linux.sh'
-alias aomx='wine "/home/jl/.wine/drive_c/Program Files (x86)/Microsoft Games/Age of Mythology/aomx" xres=1920 yres=1080 +noIntroCinematics'
+alias aomx='WINEARCH=win32 WINEPREFIX=~/.win32 wine "/home/jl/.win32/dosdevices/c:/Program Files/Microsoft Games/Age of Mythology/aomx.exe"'
 
 # thefuck
 eval $(thefuck --alias fu)
