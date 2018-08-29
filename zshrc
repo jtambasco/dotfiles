@@ -13,7 +13,7 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir root_indicator vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator ssh)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator ssh vi_mode)
 POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-aheadbehind git-stash git-remotebranch git-tagname)
 
 # Load the oh-my-zsh's library.
@@ -32,9 +32,14 @@ antigen bundle chrissicool/zsh-256color
 antigen bundle supercrabtree/k
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
+antigen bundle colored-man-pages
+antigen bundle cp
+antigen bundle vi-mode
+antigen bundle b4b4r07/zsh-vimode-visual
 
 # Load the theme.
 antigen theme bhilburn/powerlevel9k powerlevel9k
+
 
 # Tell Antigen that you're done.
 antigen apply
@@ -43,11 +48,11 @@ antigen apply
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-bindkey -v
 
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=243'
 bindkey '^ ' autosuggest-accept
+bindkey '^x' autosuggest-execute
 
 # Default Python settings
 export PYTHONSTARTUP=$HOME/.pythonstartup.py
@@ -88,3 +93,14 @@ alias fcd='cd "$(dirname "$(fzf)")"'
 
 # Qt5
 alias qt5-designer='/usr/lib/x86_64-linux-gnu/qt5/bin/designer'
+
+prompt_vi_mode() {
+    local mode="${${${KEYMAP/vicmd/NORMAL}/(vivis|vivli)/VISUAL}/(main|viins)/INSERT}"
+  if [[ "$mode" == "NORMAL" ]]; then
+    $1_prompt_segment "$0" "$2" "$DEFAULT_COLOR" "white" "NORMAL"
+  elif [[ "$mode" == "VISUAL" ]]; then
+    $1_prompt_segment "$0" "$2" "$DEFAULT_COLOR" "199" "VISUAL"
+  else
+    $1_prompt_segment "$0" "$2" "$DEFAULT_COLOR" "blue" "INSERT"
+  fi
+}
