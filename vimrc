@@ -45,6 +45,7 @@ Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'tomtom/tcomment_vim'
+Plug 'junegunn/vim-peekaboo'
 
 call plug#end()
 
