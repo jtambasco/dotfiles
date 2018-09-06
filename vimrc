@@ -13,7 +13,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'easymotion/vim-easymotion'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'iCyMind/NeoSolarized'
 Plug 'scrooloose/nerdtree'
@@ -46,6 +45,8 @@ Plug 'iamcco/markdown-preview.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/vim-peekaboo'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -189,3 +190,9 @@ imap <silent> <F10> <Plug>StopMarkdownPreview
 
 " Markdown-Vim
 let g:vim_markdown_folding_disabled = 1
+
+" fzf.vim
+nnoremap <C-t> :Files<Cr>
+nnoremap <C-l> :Lines<Cr>
+nnoremap <C-x> :Buffers<Cr>
+nnoremap <C-a> :Ag<Cr>

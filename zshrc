@@ -1,10 +1,10 @@
 # ~/.zshrc
 
 # Install:
-# Trizen: antigen thefuck exa nerd-fonts-complete fzf yapf
-# better_exceptions
+# yay: zplug thefuck exa nerd-fonts-complete fasd fzf yapf the_silver_searcher
+# pip: better_exceptions
 
-source /usr/share/zsh/share/antigen.zsh
+source /usr/share/zsh/scripts/zplug/init.zsh
 
 # Powerlevel9k theme settings
 DEFAULT_USER='jl'
@@ -16,33 +16,37 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir root_indicator vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator ssh vi_mode)
 POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-aheadbehind git-stash git-remotebranch git-tagname)
 
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle pip
-antigen bundle command-not-found
-antigen bundle zsh-dircolors-solarized
-antigen bundle zsh-syntax-highlighting
-antigen bundle git
-antigen bundle bundler
-antigen bundle dotenv
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle chrissicool/zsh-256color
-antigen bundle supercrabtree/k
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-antigen bundle colored-man-pages
-antigen bundle cp
-antigen bundle vi-mode
-antigen bundle b4b4r07/zsh-vimode-visual
+zplug "plugins/pip", from:oh-my-zsh
+zplug "plugins/command-not-found", from:oh-my-zsh
+zplug "plugins/zsh-dircolors-solarized", from:oh-my-zsh
+zplug "plugins/zsh-syntax-highlighting", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/bundler", from:oh-my-zsh
+zplug "plugins/dotenv", from:oh-my-zsh
+zplug "plugins/colored-man-pages", from:oh-my-zsh
+zplug "plugins/cp", from:oh-my-zsh
+zplug "plugins/vi-mode", from:oh-my-zsh
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "chrissicool/zsh-256color"
+zplug "supercrabtree/k"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+zplug "b4b4r07/zsh-vimode-visual"
 
 # Load the theme.
-antigen theme bhilburn/powerlevel9k powerlevel9k
+zplug "bhilburn/powerlevel9k", as:theme
 
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
 
-# Tell Antigen that you're done.
-antigen apply
+# Then, source plugins and add commands to $PATH
+zplug load
 
 # zsh auto config
 HISTFILE=~/.histfile
@@ -97,6 +101,9 @@ prompt_vi_mode() {
   fi
 }
 
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
 source ~/.fzf.zsh
+
+# FASD
+eval "$(fasd --init auto)"
+alias v="f -e nvim"
+alias o="a -e xdg-open"
