@@ -1,7 +1,7 @@
 # ~/.zshrc
 
 # Install:
-# Trizen: antigen thefuck exa fasd nerd-fonts-complete fzf yapf
+# Trizen: antigen thefuck exa nerd-fonts-complete fzf yapf
 # better_exceptions
 
 source /usr/share/zsh/share/antigen.zsh
@@ -66,11 +66,6 @@ alias aomx='WINEARCH=win32 WINEPREFIX=~/.win32 wine "/home/jl/.win32/dosdevices/
 # thefuck
 eval $(thefuck --alias fu)
 
-# fasd
-alias o='f -e xdg-open' # quick opening files with xdg-open
-alias v='f -e vim' # quick opening files with vim
-eval "$(fasd --init posix-alias zsh-hook)"
-
 # neovim
 alias vim=nvim
 
@@ -87,13 +82,10 @@ alias lumerical-mode='/opt/lumerical/mode/bin/mode-solutions'
 alias lumerical-interconnect='/opt/lumerical/interconnect/bin/interconnect'
 alias lumerical-device='/opt/lumerical/device/bin/device'
 
-# FZF
-alias fvim='nvim $(fzf)'
-alias fcd='cd "$(dirname "$(fzf)")"'
-
 # Qt5
 alias qt5-designer='/usr/lib/x86_64-linux-gnu/qt5/bin/designer'
 
+# ZSH vim insert mode styles.
 prompt_vi_mode() {
     local mode="${${${KEYMAP/vicmd/NORMAL}/(vivis|vivli)/VISUAL}/(main|viins)/INSERT}"
   if [[ "$mode" == "NORMAL" ]]; then
@@ -104,3 +96,7 @@ prompt_vi_mode() {
     $1_prompt_segment "$0" "$2" "$DEFAULT_COLOR" "blue" "INSERT"
   fi
 }
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+source ~/.fzf.zsh
