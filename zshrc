@@ -20,19 +20,18 @@ POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-aheadbehind git-stash git-rem
 zplug "plugins/pip", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
 zplug "plugins/zsh-dircolors-solarized", from:oh-my-zsh
-zplug "plugins/zsh-syntax-highlighting", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/bundler", from:oh-my-zsh
 zplug "plugins/dotenv", from:oh-my-zsh
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/cp", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
-zplug "zsh-users/zsh-syntax-highlighting"
 zplug "chrissicool/zsh-256color"
 zplug "supercrabtree/k"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
-zplug "b4b4r07/zsh-vimode-visual"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "b4b4r07/zsh-vimode-visual", defer:3
 
 # Load the theme.
 zplug "bhilburn/powerlevel9k", as:theme
@@ -53,6 +52,10 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
+# Highlight autocompletion objects
+zstyle ':completion:*' menu select
+autoload -U compinit && compinit
+
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=243'
 bindkey '^ ' autosuggest-accept
@@ -63,7 +66,7 @@ export PYTHONSTARTUP=$HOME/.pythonstartup.py
 export BETTER_EXCEPTIONS=1
 
 # installed programs
-alias trizenClean='trizen -R $(trizen -Qdtq)'
+alias yayClean='yay -R $(yay -Qdtq)'
 alias papercut='~/.papercut/pc-client-linux.sh'
 alias aomx='WINEARCH=win32 WINEPREFIX=~/.win32 wine "/home/jl/.win32/dosdevices/c:/Program Files/Microsoft Games/Age of Mythology/aomx.exe"'
 
