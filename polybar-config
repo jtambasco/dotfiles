@@ -39,7 +39,7 @@ font-0 = DejaVuSansMono:size=9:weight=bold;3
 font-1 = MaterialDesignIcons:size=16;4
 font-2 = WeatherIcons:size=13;4
 
-modules-left = i3 xwindow
+modules-left = i3 gui-counter
 modules-center = date openweathermap-forecast
 modules-right = wlan eth xbacklight pulseaudio memory cpu battery powermenu
 
@@ -225,7 +225,7 @@ udspeed-minwidth = 3
 
 format-connected = <ramp-signal> <label-connected>
 ;format-connected-underline = #9f78e1
-label-connected = %essid% %{F#54c367}%downspeed%%{F-} %{F#ff6a6a}%upspeed%%{F-}
+label-connected = %essid% %downspeed%% %upspeed%%
 
 ;format-disconnected =
 format-disconnected = <label-disconnected>
@@ -454,6 +454,11 @@ menu-0-1-exec = systemctl poweroff
 type = custom/script
 exec = ~/polybar-scripts/polybar-scripts/info-ssh-sessions/info-ssh-sessions.sh
 interval = 5
+
+[module/gui-counter]
+type = custom/script
+exec = ~/.config/polybar/gui-counter.py
+interval = 8
 
 [module/openweathermap-detailed]
 type = custom/script

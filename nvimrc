@@ -58,6 +58,7 @@ set mouse=a
 set hidden
 set encoding=utf-8
 set fileencoding=utf-8
+set nowrap
 
 " Map SPACE to remove search highlighting
 nmap <SPACE> <SPACE>:noh<CR>
