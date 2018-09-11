@@ -31,6 +31,7 @@ def main():
     polybar_config = os.path.expanduser('~/.config/polybar/config')
     rofi_config = os.path.expanduser('~/.config/rofi/config')
     nvim_config = os.path.expanduser('~/.nvimrc')
+    nvim_init_config = os.path.expanduser('~/.config/nvim/init.vim')
     zshrc_config = os.path.expanduser('~/.zshrc')
     desktop_files = '/usr/share/applications/nvim-term.desktop'
 
@@ -39,6 +40,7 @@ def main():
     make_symlink('polybar-config', polybar_config, soft=True)
     make_symlink('rofi-config', rofi_config, soft=True)
     make_symlink('nvimrc', nvim_config, soft=True)
+    make_symlink('nvim-init', nvim_init_config, soft=True)
     make_symlink('zshrc', zshrc_config, soft=True)
     make_symlink('nvim-term.desktop', desktop_files, sudo=True, soft=True)
 
