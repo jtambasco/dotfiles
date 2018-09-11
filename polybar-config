@@ -1,3 +1,8 @@
+; Arch Font Packages:
+;   ttf-dejavu
+;   ttf-material-design-icons-git (https://materialdesignicons.com/)
+;   ttf-weather-icons (https://erikflowers.github.io/weather-icons/)
+
 [colors]
 background = #40000000
 background-alt = #70000000
@@ -10,7 +15,7 @@ alert = #bd2c40
 [bar/main]
 monitor = eDP1
 width = 100%
-height = 27
+height = 24
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
@@ -28,19 +33,18 @@ border-color = #00000000
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 2
 
-font-0 = DejaVuSansMono:size=9:weight=bold;1
-font-1 = MaterialDesignIcons:size=16;2
-font-2 = WeatherIcons:size=14;3
+font-0 = DejaVuSansMono:size=9:weight=bold;3
+font-1 = MaterialDesignIcons:size=16;4
+font-2 = WeatherIcons:size=13;4
 
 modules-left = i3 xwindow
-modules-center = date openweathermap-detailed
+modules-center = date openweathermap-forecast
 modules-right = wlan eth xbacklight alsa memory cpu battery powermenu
 
-tray-position = right
-tray-padding = 2
+;tray-position = right
+;tray-padding = 2
 ;tray-transparent = true
 ;tray-background = #0063ff
 
@@ -70,6 +74,7 @@ format-padding = 4
 ; Default: %title%
 label = %title%
 label-maxlen = 50
+format-background = #50000000
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -247,7 +252,7 @@ format-prefix =
 ;format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #0a6cf5
 
-label = %time%  %date%
+label = "%time% %date%  "
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -328,15 +333,15 @@ format-full-prefix = 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
-animation-charging-4 = 
+animation-charging-4 = 
 animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 1000
 
@@ -399,6 +404,11 @@ interval = 5
 [module/openweathermap-detailed]
 type = custom/script
 exec = ~/.config/polybar/openweathermap-detailed.sh
+interval = 600
+
+[module/openweathermap-forecast]
+type = custom/script
+exec = ~/.config/polybar/openweathermap-forecast.sh
 interval = 600
 
 [settings]
