@@ -6,11 +6,11 @@ fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/home/jl/.fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source ~/.fzf/shell/completion.zsh 2> /dev/null
 
 # Key bindings
 # ------------
-source "/home/jl/.fzf/shell/key-bindings.zsh"
+source ~/.fzf/shell/key-bindings.zsh
 
 # fd - cd to selected directory
 fd() {

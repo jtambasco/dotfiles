@@ -169,7 +169,6 @@ bindsym $mod+r mode "resize"
 #        status_command i3status
 #}
 
-exec feh --bg-scale ~/Pictures/drawn-wallpaper-nature-3.jpg
 
 bindsym Mod4+w exec chromium
 bindsym Mod4+e exec nemo
@@ -183,5 +182,6 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
+exec feh --bg-scale ~/Pictures/drawn-wallpaper-nature-3.jpg
 exec_always compton -b
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
