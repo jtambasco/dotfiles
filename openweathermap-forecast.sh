@@ -18,7 +18,7 @@ get_icon() {
         13n) icon="";;
         50d) icon="";;
         50n) icon="";;
-        *) icon="";
+        *) icon="?";
     esac
 
     echo $icon
@@ -65,5 +65,5 @@ if [ ! -z "$current" ] && [ ! -z "$forecast" ]; then
         trend="%{T$MATERIAL_FONT_IDX}%{T-}"
     fi
 
-    echo "%{T$WEATHER_FONT_IDX}$(get_icon "$current_icon"%{T-}) $current_temp$SYMBOL $trend %{T$WEATHER_FONT_IDX}$(get_icon "$forecast_icon")%{T-} $forecast_temp$SYMBOL"
+    echo "%{T$WEATHER_FONT_IDX}$(get_icon "$current_icon" %{T-}) $current_temp$SYMBOL $trend %{T$WEATHER_FONT_IDX}$(get_icon "$forecast_icon")%{T-} $forecast_temp$SYMBOL"
 fi
