@@ -4,6 +4,9 @@ import subprocess
 import sys
 from collections import Counter, OrderedDict
 
+def f(string, idx):
+    return '%%{T%i}%s%%{T-}' % (idx, string)
+
 # Font from:
 # ttf-material-design-icons-git (https://materialdesignicons.com/)
 
@@ -16,7 +19,7 @@ PROCESS = True
 # Program/process names and corresponding gylphs.
 guis = OrderedDict({
     'terminals': '',
-    'chromes': '',
+    'chromes': f('', 4),
     'firefox': '',
     'skypeforlinux': '',
     'filemanager': '蝹',
@@ -27,7 +30,7 @@ guis = OrderedDict({
 })
 
 processes = OrderedDict({
-    'vims': '',
+    'vims': f('', 4),#'',
     'ssh': '',
     'lumerical': '',
     'updater': '練',
