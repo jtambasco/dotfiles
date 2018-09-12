@@ -39,7 +39,7 @@ font-0 = DejaVuSansMono:size=9:weight=bold;3
 font-1 = MaterialDesignIcons:size=16;4
 font-2 = WeatherIcons:size=13;4
 
-modules-left = i3 gui-counter
+modules-left = i3 program-counter
 modules-center = date openweathermap-forecast
 modules-right = wlan eth xbacklight pulseaudio memory cpu battery powermenu
 
@@ -455,9 +455,9 @@ type = custom/script
 exec = ~/polybar-scripts/polybar-scripts/info-ssh-sessions/info-ssh-sessions.sh
 interval = 5
 
-[module/gui-counter]
+[module/program-counter]
 type = custom/script
-exec = ~/.config/polybar/gui-counter.py
+exec = ~/.config/polybar/program-counter.py
 interval = 8
 
 [module/openweathermap-detailed]
