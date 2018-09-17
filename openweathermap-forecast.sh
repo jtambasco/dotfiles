@@ -59,7 +59,7 @@ if [ ! -z "$current" ] && [ ! -z "$forecast" ]; then
     current_icon=$(echo "$current" | jq -r ".weather[0].icon")
 
     forecast_temp=$(echo "$forecast" | jq ".list[].main.temp")
-    forecast_temp=$(printf "%0.1f\n" $(echo "$forecast_temp+0.0" | bc) )
+    forecast_temp=$(printf "%0.1f\n" $(echo "$forecast_temp+0.001" | bc) )
     forecast_icon=$(echo "$forecast" | jq -r ".list[].weather[0].icon")
 
     if (( $(echo "$current_temp > $forecast_temp" | bc -l) )); then
