@@ -25,8 +25,8 @@ get_icon() {
 }
 
 KEY="23a2c2a7dc0013ee24a45f4eae4bb548"
-#CITY="Collingwood,AU"
-CITY=""
+CITY="Collingwood,AU"
+#CITY=""
 UNITS="metric"
 SYMBOL="°C"
 MATERIAL_FONT_IDX=2 # Index of the material icons font in the Polybar config file.
@@ -49,7 +49,7 @@ else
         location_lon="$(echo "$location" | jq '.location.lng')"
 
         current=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?appid=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS")
-        forecast=$(curl -sf "http://api.openweathermap.org/data/2.5/forecast?APPID=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS&cnt=1")
+        forecast=$(curl -sf "http://api.openweathermap.org/data/2.5/forecast?appid=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS&cnt=1")
     fi
 fi
 

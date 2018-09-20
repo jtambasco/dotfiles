@@ -169,7 +169,7 @@ bindsym $mod+r mode "resize"
 #        status_command i3status
 #}
 
-gaps inner 10
+gaps inner 20
 gaps outer 0
 smart_gaps on
 

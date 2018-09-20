@@ -47,6 +47,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'elixir-editors/vim-elixir'
 
 call plug#end()
 
