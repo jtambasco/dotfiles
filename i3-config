@@ -175,7 +175,8 @@ smart_gaps on
 
 bindsym Mod4+w exec chromium
 bindsym Mod4+e exec nemo
-bindsym Mod4+l exec i3lock --color=000000 -f
+#bindsym Mod4+l exec i3lock --color=000000 -f
+bindsym Mod4+l exec dm-tool lock
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
