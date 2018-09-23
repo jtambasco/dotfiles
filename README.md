@@ -7,7 +7,7 @@ A repo containing my dotfiles.
 
 ## Requisite Packages
 * General
-    * `yay -S zsh zplug thefuck exa fasd fzf yapf the_silver_searcher rofi termite neovim bspwm sxhkd polybar rofi`
+    * `yay -S zsh zplug thefuck exa fasd fzf yapf the_silver_searcher rofi termite neovim bspwm sxhkd polybar rofi networkmanager-dmenu-git`
 * fonts
     * `yay -S ttf-dejavu nerd-fonts-complete ttf-material-design-icons-git ttf-weather-icons`
 * neovim
