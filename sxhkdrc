@@ -16,7 +16,7 @@ super + n
 super + shift + e
     thunar
 
-super + shift + w
+super + shift + b
     chromium
 
 # make sxhkd reload its configuration files:
@@ -45,7 +45,7 @@ super + y
 
 # swap the current node and the biggest node
 super + g
-	bspc node -s biggest
+	bspc node -s biggest.local
 
 # quit bspwm normally
 super + alt + Escape

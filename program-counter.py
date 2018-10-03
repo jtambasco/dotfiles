@@ -27,6 +27,8 @@ guis = OrderedDict({
     'pdfviewer': '',
     'image': '',
     'klayout': '',
+    'messengerfordes': '',
+    'whatsie': '',
 })
 
 processes = OrderedDict({
@@ -84,6 +86,7 @@ if GUI:
             get_process(w[2]) for w in wlist if check_wtype(w[0]) == True
         ]
 
+        #print(validprocs)
         return validprocs
 
     # Get list of running GUI programs.
@@ -150,5 +153,9 @@ if PROCESS:
                 process_output += '%s %i ' % (v, c)
         except:
             pass
+    process_output = process_output[:-1]
 
-print(gui_output + process_output)
+if gui_output or process_output:
+    print('' + gui_output + process_output + '')
+else:
+    print('')
