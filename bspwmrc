@@ -2,7 +2,7 @@
 
 sxhkd &
 
-bspc monitor -d 1 2 3 4 5 6 7 8 9 message
+bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
 bspc config border_width        4
 bspc config window_gap          12
@@ -24,9 +24,10 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-bspc rule -a Whatsie desktop='message'
-bspc rule -a 'Messenger for Desktop' desktop='message'
-bspc rule -a Skype desktop='message'
+bspc rule -a Whatsie desktop='0'
+bspc rule -a Caprine desktop='0'
+bspc rule -a 'Messenger for Desktop' desktop='0'
+bspc rule -a Skype desktop='0'
 
 # Set background
 feh --bg-center ~/Pictures/drawn-wallpaper-nature-3.jpg

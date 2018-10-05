@@ -16,6 +16,9 @@ GUI = True
 # Update processes
 PROCESS = True
 
+# Glyph to mark start and end of program output
+start_end_marker = ''
+
 # Program/process names and corresponding gylphs.
 guis = OrderedDict({
     'terminals': '',
@@ -27,7 +30,7 @@ guis = OrderedDict({
     'pdfviewer': '',
     'image': '',
     'klayout': '',
-    'messengerfordes': '',
+    'messenger': '',
     'whatsie': '',
 })
 
@@ -47,6 +50,7 @@ combine_guis = {
     'remote-desktop': ('TeamViewer', ),
     'pdfviewer': ('evince', 'okular', 'zathura'),
     'image': ('gthumb', 'shotwell', 'deepin-image-vi'),
+    'messenger': ('messengerfordes', 'caprine'),
 }
 
 combine_proccesses = {
@@ -153,9 +157,8 @@ if PROCESS:
                 process_output += '%s %i ' % (v, c)
         except:
             pass
-    process_output = process_output[:-1]
 
 if gui_output or process_output:
-    print('' + gui_output + process_output + '')
+    print(start_end_marker + (gui_output + process_output)[:-1] + start_end_marker)
 else:
     print('')
