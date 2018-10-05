@@ -37,3 +37,6 @@ compton -b
 
 # Start polybar
 $HOME/.config/polybar/launch.sh
+
+# QT5 program themes
+export QT_QPA_PLATFORMTHEME=gtk2
