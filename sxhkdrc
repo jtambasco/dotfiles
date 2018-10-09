@@ -165,3 +165,7 @@ XF86MonBrightnessDown
 	xbacklight -dec 5
 XF86MonBrightnessUp
 	xbacklight -inc 5
+
+# negative -w arg to account for a border width (default: 100%)
+alt + s
+    tdrop -ma -w -4 -y "$PANEL_HEIGHT" -s dropdown termite
