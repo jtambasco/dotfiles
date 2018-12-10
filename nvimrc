@@ -198,3 +198,6 @@ nnoremap <C-t> :Files<Cr>
 nnoremap <C-l> :Lines<Cr>
 nnoremap <C-x> :Buffers<Cr>
 nnoremap <C-a> :Ag<Cr>
+
+" C highlighting for Lumerical scripts
+au BufNewFile,BufRead *.lsf setf c
