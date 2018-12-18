@@ -65,7 +65,6 @@ set nowrap
 nmap <SPACE> <SPACE>:noh<CR>
 
 " Map ctrl-k to align to column paragraphs in vim and markdown.
-set textwidth=80
 autocmd FileType latex,tex,markdown,md nmap <c-k> vipgq
 autocmd FileType latex,tex,markdown,md vmap <c-k> gq
 
