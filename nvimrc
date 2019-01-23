@@ -53,13 +53,20 @@ call plug#end()
 
 set nu
 set mouse=a
-:filetype plugin on
-:nnoremap <Tab> :bnext<CR>
-:nnoremap <S-Tab> :bprevious<CR>
+filetype plugin on
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
 set hidden
 set encoding=utf-8
 set fileencoding=utf-8
 set nowrap
+map N Nzz
+map n nzz
+map gg ggzz
+
+set scrolloff=8         " Number of lines from vertical edge to start scrolling
+set sidescrolloff=15    " Number of cols from horizontal edge to start scrolling
+set sidescroll=1        " Number of cols to scroll at a time
 
 " Map SPACE to remove search highlighting
 nmap <SPACE> <SPACE>:noh<CR>
